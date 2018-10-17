@@ -1,30 +1,39 @@
+
 const Discord = require("discord.js");
 const client = new Discord.Client();
-
-
-
-client.on("ready", () => {
-console.log('By : moshaks');
-client.user.setPresence({
-  status: 'dnd',
-  game: {
-     type: 0,
-     name: 'Da7oom ,',
-     details: `fuck U`,
-     url: 'http://twitch.tv/moshaks-Dev',
-     state: `number 1`,
-    application_id: '377479790195769345',
-     assets: {
-        small_image: `377480550207717376`,
-        small_text: 'تعرف دحووم',
-        large_image: `377480353259978752`,
-        large_text: `IMrz ّζ͜͡MOSHADev` }
-
-  }
-    });
+client.on('ready', () => {
+  client.user.setGame(` ! - ّζ͜͡MO. ♪🍷 , .`,'https://www.twitch.tv/v5bz');
+  console.log('---------------');
+  console.log('Crazy Bot Is Online')
+  console.log('---------------')
 });
 
 
+
+
+    const devs = ['487727064192122880' , '' , '' , ''];
+    const control = "//";
+    client.on('message', message => {
+        var argresult = message.content.split(` `).slice(1).join(' ');
+          if (!devs.includes(message.author.id)) return;
+
+      if (message.content.startsWith(control + 'play')) {
+        client.user.setGame(argresult);
+          message.channel.sendMessage(`**✅   ${argresult}**`)
+      } else
+      if (message.content.startsWith(control + 'watch')) {
+      client.user.setActivity(argresult, {type:'WATCHING'});
+          message.channel.sendMessage(`**✅   ${argresult}**`)
+      } else
+      if (message.content.startsWith(control + 'listen')) {
+      client.user.setActivity(argresult , {type:'LISTENING'});
+          message.channel.sendMessage(`**✅   ${argresult}**`)
+      } else
+      if (message.content.startsWith(control + 'stream')) {
+        client.user.setGame(argresult, "https://www.twitch.tv/9ivv");
+          message.channel.sendMessage(`**✅   ${argresult}**`)
+      }
+      });
 
 
 
