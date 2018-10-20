@@ -17,19 +17,19 @@ client.on('ready', () => {
         var argresult = message.content.split(` `).slice(1).join(' ');
           if (!devs.includes(message.author.id)) return;
 
-      if (message.content.startsWith(control + 'play')) {
+      if (message.content.startsWith(control + 'ply')) {
         client.user.setGame(argresult);
           message.channel.sendMessage(`**✅   ${argresult}**`)
       } else
-      if (message.content.startsWith(control + 'watch')) {
+      if (message.content.startsWith(control + 'wt')) {
       client.user.setActivity(argresult, {type:'WATCHING'});
           message.channel.sendMessage(`**✅   ${argresult}**`)
       } else
-      if (message.content.startsWith(control + 'listen')) {
+      if (message.content.startsWith(control + 'ls')) {
       client.user.setActivity(argresult , {type:'LISTENING'});
           message.channel.sendMessage(`**✅   ${argresult}**`)
       } else
-      if (message.content.startsWith(control + 'stream')) {
+      if (message.content.startsWith(control + 'st')) {
         client.user.setGame(argresult, "https://www.twitch.tv/9ivv");
           message.channel.sendMessage(`**✅   ${argresult}**`)
       }
